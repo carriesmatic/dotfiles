@@ -1,0 +1,57 @@
+# Useful aliases
+alias v="vim"
+alias reload="source ~/.zshrc"
+#alias gpl="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+alias gpl="git lg"
+alias txa= "tmux attach"
+alias gundo="git reset --soft HEAD^"
+alias gredo="git commit -c ORIG_HEAD"
+alias todo="vim ~/Dropbox/Self/todo.org"
+alias scratch="vim ~/Dropbox/self/Notational\ Data/Scratch.txt"
+alias day="vim ~/Dropbox/Self/Notational\ Data/daily.txt"
+
+# Tmux aliases
+alias tn="tmux new-session -s"
+alias tls="tmux list-sessions"
+alias ta="tmux attach-session -t"
+
+# Search for something in the directory and subdirectories
+alias search="find . -type f | sed 's/.*/\"&\"/' | xargs grep"
+
+# Quickly navigate filesystem from command-line
+export MARKPATH=$HOME/.marks
+function jump {
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+
+function mark {
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+
+function unmark {
+    rm -i "$MARKPATH/$1"
+}
+
+function marks {
+    ls -l $MARKPATH | tr -s ' ' | cut -d ' ' -f 9- | sed s,$HOME,~,';1d;s/ -/   -/;s/^/  /'
+}
+
+alias j="jump"
+
+# from hn/item?id=6229291
+function _jump {
+    local curr=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "$( \ls $MARKPATH )" -- $curr) )
+}
+#complete -o default -o nospace -F _jump jump unmark
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Users/carriercat/Downloads/cocos2d-x-3.0/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable ANT_ROOT for cocos2d-x
+export ANT_ROOT=/usr/local/bin
+export PATH=$ANT_ROOT:$PATH
+
