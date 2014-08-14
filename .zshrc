@@ -47,19 +47,8 @@ source ~/.git-flow-completion.zsh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/X11/bin
-export PATH=$HOME/.rbenv/bin:~/cats/scala-2.10.2/bin:$PATH
-export PATH=/Applications/MATLAB_R2013a.app/bin:$PATH
-
-# Python
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-
-# Music 159
-export YAAFE_PATH=/usr/local/yaafe_extensions
-# export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
 
 # Other
-export XDG_DATA_DIRS=:/opt/local/share
-export RBENV_ROOT=/usr/local/var/rbenv
 export PGHOST=localhost
 export GIT_EDITOR=vim
 
