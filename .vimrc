@@ -32,6 +32,8 @@ Bundle 'jceb/vim-orgmode'
 Bundle 'hsitz/VimOrganizer'
 Bundle 'wavded/vim-stylus'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'rstacruz/sparkup'
+Bundle 'rizzatti/dash.vim'
 "Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on     " required! (loads file type plugins + indentation)
@@ -49,8 +51,16 @@ set nocompatible                " choose no compatibility with legacy vi
 set encoding=utf-8
 
 " Set colors
-color molokai
-set t_Co=256
+let g:solarized_termcolors=16
+let g:solarized_termtrans =0
+let g:solarized_degrade   =0
+let g:solarized_bold      =1
+let g:solarized_underline =1
+let g:solarized_italic    =1
+let g:solarized_contrast  ="normal"
+let g:solarized_visibility="normal"
+
+color solarized
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
