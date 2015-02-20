@@ -8,7 +8,8 @@
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [core]
-	excludesfile = /Users/carriercat/.gitignore_global
+	excludesfile = ~/.gitignore_global
+	editor = /usr/bin/vim
 [mergetool]
 	keepBackup = true
 [credential]
@@ -19,3 +20,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[mergetool "storyboard"]
+    name = StoryboardMerge interactive merge
+    cmd = storyboard-merge $BASE $LOCAL $REMOTE $MERGED
+    trustExitCode = false
+[credential]
+	helper = osxkeychain

@@ -6,6 +6,7 @@ alias gpl="git lg"
 alias txa= "tmux attach"
 alias gundo="git reset --soft HEAD^"
 alias gredo="git commit -c ORIG_HEAD"
+alias gsu="git submodule update"
 
 # Tmux aliases
 alias tn="tmux new-session -s"
@@ -14,6 +15,9 @@ alias ta="tmux attach-session -t"
 
 # Search for something in the directory and subdirectories
 alias search="find . -type f | sed 's/.*/\"&\"/' | xargs grep"
+
+# Clear and do something
+alias c="clear &&"
 
 # Quickly navigate filesystem from command-line
 export MARKPATH=$HOME/.marks
@@ -40,4 +44,27 @@ function _jump {
     local curr=${COMP_WORDS[COMP_CWORD]}
     COMPREPLY=( $(compgen -W "$( \ls $MARKPATH )" -- $curr) )
 }
+
+# extract different filetypes
+extract () {
+   if [ -f $1 ] ; then
+       case $1 in
+           *.tar.bz2)   tar xvjf $1    ;;
+           *.tar.gz)    tar xvzf $1    ;;
+           *.bz2)       bunzip2 $1     ;;
+           *.rar)       unrar x $1     ;;
+           *.gz)        gunzip $1      ;;
+           *.tar)       tar xvf $1     ;;
+           *.tbz2)      tar xvjf $1    ;;
+           *.tgz)       tar xvzf $1    ;;
+           *.zip)       unzip $1       ;;
+           *.Z)         uncompress $1  ;;
+           *.7z)        7z x $1        ;;
+           *)           echo "don't know how to extract '$1'..." ;;
+       esac
+   else
+       echo "'$1' is not a valid file"
+   fi
+}
+
 #complete -o default -o nospace -F _jump jump unmark

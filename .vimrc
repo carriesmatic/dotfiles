@@ -26,6 +26,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'Townk/vim-autoclose'
 Bundle 'bling/vim-airline'
+Bundle 'toyamarinyon/vim-swift'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'jceb/vim-orgmode'
@@ -34,6 +35,7 @@ Bundle 'wavded/vim-stylus'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'rstacruz/sparkup'
 Bundle 'rizzatti/dash.vim'
+" Bundle 'Valloric/YouCompleteMe'
 "Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on     " required! (loads file type plugins + indentation)
@@ -204,6 +206,7 @@ map Y y$
 " Movement maps
 nnoremap ; :
 " nnoremap : ;
+
 nnoremap j gj
 nnoremap k gk
 " nnoremap $ g$
@@ -330,4 +333,3 @@ let g:vim_markdown_folding_disabled=1
 " VimOrganizer
 let g:agenda_dirs=["~/Dropbox/Self"]
 let g:org_agenda_select_dirs=["~/Dropbox/Self"]
-
