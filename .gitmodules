@@ -1,0 +1,3 @@
+[submodule "zsh-files"]
+	path = .zsh-files
+	url = git://github.com/carriesmatic/zsh-files.git
