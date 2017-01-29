@@ -56,6 +56,9 @@ antigen apply
 # Customize path
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/X11/bin
 
+# Python binaries
+export PATH=$PATH:/usr/local/lib/python2.7/site-packages
+
 # Other
 export PGHOST=localhost
 export GIT_EDITOR=vim
