@@ -1,6 +1,0 @@
-"autocmd InsertEnter * :set number
-set relativenumber
-set number
-
-" Movement maps
-nmap ; :
