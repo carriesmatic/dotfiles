@@ -6,3 +6,6 @@ colorscheme base16-tomorrow-night
 let g:ctrlp_map=''  " Remove ctrlp mapping
 nnoremap <C-P> :GFiles<CR>
 nnoremap <Leader>p :Buffers<CR>
+
+" Movement maps
+nnoremap ; :
