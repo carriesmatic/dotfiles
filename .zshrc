@@ -1,77 +1,15 @@
-# Where the zsh files reside
-ZSH_FILES=$HOME/.zsh-files
+typeset -U path
 
-# Load Antigen
-source $ZSH_FILES/antigen/antigen.zsh
+# zplug
+export ZPLUG_HOME=$HOME/.zplug
+export ZPLUG_LOADFILE=$HOME/.zplug.packages.zsh
+[ -d $ZPLUG_HOME ] || git clone https://github.com/zplug/zplug $ZPLUG_HOME
+source $ZPLUG_HOME/init.zsh
 
-# Load lib files
-antigen use oh-my-zsh
-
-#
-# Antigen Theme
-#
-
-antigen theme $ZSH_FILES/themes carriercat.zsh-theme
-
-#
-# Antigen Bundles
-#
-
-# oh-my-zsh
-# antigen bundle heroku
-antigen bundle tmux
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-
-# Themes
-antigen bundle chriskempson/base16-shell --loc=scripts/base16-tomorrow-night.sh
-
-# Git
-antigen bundle git
-# antigen bundle git-flow
-
-# SSH
-antigen bundle ssh-agent
-
-# Python
-antigen bundle pip
-antigen bundle python
-antigen bundle virtualenv
-
-# OSX
-# antigen bundle osx
-antigen bundle brew
-# antigen bundle brew-cask
-# antigen bundle gem
-
-# Other bundles
-antigen bundle rupa/z
-
-# Tell antigen that you're done
-antigen apply
-
-# Customize path
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/X11/bin
-
-# Python binaries
-export PATH=$PATH:/usr/local/lib/python2.7/site-packages
+# Discard older duplicate entries from history.
+setopt HIST_IGNORE_ALL_DUPS
 
 # Other
-export PGHOST=localhost
-export GIT_EDITOR=vim
+export EDITOR=vim
 
-# Key timeout
-KEYTIMEOUT=1
-
-# You may want to put all your additions into a separate file like
-# ~/.zsh_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package
-if [ -f ~/.zsh_aliases ]; then
-    . ~/.zsh_aliases
-fi
-
-# For "sensitive"/computer-specific aliases
-if [ -f ~/.private_zsh_aliases ]; then
-    . ~/.private_zsh_aliases
-fi
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
