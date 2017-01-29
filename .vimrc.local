@@ -1,0 +1,8 @@
+" Use base16 color scheme
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-tomorrow-night
+
+" FZF
+let g:ctrlp_map=''  " Remove ctrlp mapping
+nnoremap <C-P> :GFiles<CR>
+nnoremap <Leader>p :Buffers<CR>

@@ -1,0 +1,3 @@
+Bundle 'chriskempson/base16-vim'
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
