@@ -9,6 +9,17 @@ export ZPLUG_LOADFILE=$HOME/.zplug.packages.zsh
 [ -d $ZPLUG_HOME ] || git clone https://github.com/zplug/zplug $ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
 
+# Set iTerm2 tab color
+tab-color() {
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+tab-reset() {
+    echo -ne "\033]6;1;bg;*;default\a"
+}
+tab-color 19 26 34
+
 # spaceship
 SPACESHIP_NVM_SHOW=false
 SPACESHIP_RUBY_SHOW=false
