@@ -1,4 +1,7 @@
 typeset -U path
+typeset -U fpath
+
+fpath=($(brew --prefix)/completions/zsh $fpath)
 
 # zplug
 export ZPLUG_HOME=$HOME/.zplug
