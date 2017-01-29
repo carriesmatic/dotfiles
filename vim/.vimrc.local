@@ -2,10 +2,14 @@
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-tomorrow-night
 
+" UI
+let g:bufferline_echo = 0
+
+" Movement maps
+nnoremap ; :
+
 " FZF
 let g:ctrlp_map=''  " Remove ctrlp mapping
 nnoremap <C-P> :GFiles<CR>
 nnoremap <Leader>p :Buffers<CR>
 
-" Movement maps
-nnoremap ; :
