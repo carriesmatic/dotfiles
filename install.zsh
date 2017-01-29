@@ -1,10 +1,11 @@
 #!/usr/bin/env zsh
 set -e
 
-cd ${0:a:h}
-DIR=$(pwd)
-mkdir -pv bak
-for rc in *rc gitconfig tmux.conf; do
-  [ -e ~/.$rc ] && mv -v ~/.$rc bak/.$rc
-  ln -sfv $DIR/$rc ~/.$rc
-done
+command -v stow >/dev/null 2>&1 || { echo "Please install GNU stow." >&2; exit 1;  }
+stow --dir=${${(%):-%N}:A:h} --target=$HOME --restow git tmux vim zsh
+
+# Install spf13-vim
+# Note: do this after stow command so that we only install the vim plugins we want.
+if [[ ! -d $HOME/.spf13-vim-3 ]]; then
+    curl https://j.mp/spf13-vim3 -L -o - | sh
+fi
