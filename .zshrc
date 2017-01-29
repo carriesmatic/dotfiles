@@ -24,6 +24,9 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 
+# Themes
+antigen bundle chriskempson/base16-shell --loc=scripts/base16-tomorrow-night.sh
+
 # Git
 antigen bundle git
 # antigen bundle git-flow
@@ -31,15 +34,10 @@ antigen bundle git
 # SSH
 antigen bundle ssh-agent
 
-# Node
-# antigen bundle coffee
-# antigen bundle node
-# antigen bundle npm
-
 # Python
-# antigen bundle pip
-# antigen bundle python
-# antigen bundle virtualenv
+antigen bundle pip
+antigen bundle python
+antigen bundle virtualenv
 
 # OSX
 # antigen bundle osx
