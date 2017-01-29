@@ -7,6 +7,7 @@ zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "lib/directories", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "rupa/z", use:"z.sh"
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "zsh-users/zsh-completions"
