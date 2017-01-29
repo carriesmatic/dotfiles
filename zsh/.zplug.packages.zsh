@@ -1,4 +1,4 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-tomorrow-night.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-eighties.sh"
 zplug "denysdovhan/spaceship-zsh-theme", as:theme
 zplug "junegunn/fzf", use:"shell/*.zsh", on:"junegunn/fzf-bin", \
     hook-load:"export FZF_DEFAULT_OPTS='--exact'"
