@@ -14,7 +14,6 @@ setopt HIST_IGNORE_ALL_DUPS
 alias dl='cd ~/Downloads'
 alias dot='cd ~/dotfiles'
 alias g='git'
-alias ws='cd ~/workspace'
 
 # Disable oh-my-zsh auto update prompt.
 DISABLE_AUTO_UPDATE=true
