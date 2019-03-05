@@ -33,9 +33,10 @@ autocmd vimrc FileType gitcommit,markdown setlocal spell
 
 " Plugins (junegunn/vim-plug)
 call plug#begin()
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/tmuxline.vim'
+Plug 'flazz/vim-colorschemes'
 Plug 'haya14busa/vim-poweryank'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf'
@@ -52,6 +53,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -67,7 +69,7 @@ let base16colorspace = 256
 if filereadable(expand('~/.vimrc_background'))
   source ~/.vimrc_background
 else
-  colorscheme base16-default-dark
+  colorscheme DarkDefault
 endif
 
 " fzf.vim
