@@ -7,7 +7,36 @@
 [pull]
 	rebase = true
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	a = add
+	ap = add --patch
+	b = branch
+	c = commit --verbose
+	ca = commit --verbose --all
+	cl = clone --recursive
+	co = checkout
+	d = diff
+	dc = diff --cached
+	l = pull
+	lg = log --stat
+    lgv = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgp = log --patch
+	m = merge
+	p = push
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	rh = reset HEAD
+	rhh = reset HEAD --hard
+	rs = reset HEAD^ --soft
+	s = status
+	st = stash
+	sta = stash apply
+	stc = stash clear
+	std = stash drop
+	stl = stash list
+	stp = stash pop
 [commit]
     verbose = true
 [core]
