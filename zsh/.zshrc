@@ -28,6 +28,9 @@ SPACESHIP_VI_MODE_SHOW=false
 # Discard older duplicate entries from history.
 setopt HIST_IGNORE_ALL_DUPS
 
+# Only store successful commands in history.
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1  }
+
 # Other
 export EDITOR=vim
 
@@ -41,6 +44,7 @@ z() {
   cd "$(_z -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"
 }
 
+# Aliases
 alias j=z
 alias reload="source ~/.zshrc"
 alias up="cd .."
