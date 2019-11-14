@@ -10,6 +10,9 @@ path=(~/bin ~/.local/bin $path)
 # Discard older duplicate entries from history.
 setopt HIST_IGNORE_ALL_DUPS
 
+# Only store successful commands in history.
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1  }
+
 # Aliases
 alias dl='cd ~/Downloads'
 alias dot='cd ~/dotfiles'

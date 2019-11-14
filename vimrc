@@ -28,12 +28,21 @@ augroup END
 " Remap jj to <Esc>
 inoremap jj <Esc>
 
+" Remap ; to :
+nnoremap ; :
+
 " Spell check
 autocmd vimrc FileType gitcommit,markdown setlocal spell
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins (junegunn/vim-plug)
 call plug#begin()
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/tmuxline.vim'
 Plug 'flazz/vim-colorschemes'
@@ -69,7 +78,7 @@ let base16colorspace = 256
 if filereadable(expand('~/.vimrc_background'))
   source ~/.vimrc_background
 else
-  colorscheme DarkDefault
+  colorscheme base16-eighties
 endif
 
 " fzf.vim

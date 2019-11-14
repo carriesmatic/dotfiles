@@ -1,5 +1,0 @@
-Bundle 'chriskempson/base16-vim'
-Bundle 'tmux-plugins/vim-tmux'
-Bundle 'edkolev/tmuxline.vim'
-Bundle 'junegunn/fzf'
-Bundle 'junegunn/fzf.vim'

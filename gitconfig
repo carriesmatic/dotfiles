@@ -2,10 +2,10 @@
 	name = Carrie Chow
 [color]
     ui = true
-[push]
-	default = simple
 [pull]
 	rebase = true
+[push]
+	default = simple
 [alias]
 	a = add
 	ap = add --patch
