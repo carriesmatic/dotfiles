@@ -38,6 +38,13 @@ export EDITOR=vim
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# Setup python virtualenv
+gpip(){
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+export PIP_REQUIRE_VIRTUALENV=true
+
+# Setup z
 unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && _z "$*" && return
