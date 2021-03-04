@@ -8,6 +8,7 @@ set clipboard^=unnamedplus
 set colorcolumn=+1
 set directory=/tmp//,.
 set expandtab
+set shiftwidth=4
 set hidden
 set hlsearch
 set ignorecase
@@ -25,14 +26,12 @@ augroup vimrc
   autocmd!
 augroup END
 
+" Remap ; to : and ;; to ;
+map ; :
+nnoremap ;; ;
+
 " Remap jj to <Esc>
 inoremap jj <Esc>
-
-" Remap ; to :
-nnoremap ; :
-
-" Spell check
-autocmd vimrc FileType gitcommit,markdown setlocal spell
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -71,6 +70,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
+
+if filereadable(expand('~/.vimrc.plugins'))
+    source ~/.vimrc.plugins
+endif
+
 call plug#end()
 
 " base16-vim
