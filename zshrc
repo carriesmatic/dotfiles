@@ -41,6 +41,10 @@ if ! zgen saved; then
   # zsh-syntax-highlighting
   zgen load zsh-users/zsh-syntax-highlighting
 
+  # git
+  zgen load wfxr/forgit
+  zgen load zdharma/zsh-diff-so-fancy
+
   zgen save
 fi
 

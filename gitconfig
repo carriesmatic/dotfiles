@@ -1,7 +1,7 @@
 [user]
 	name = Carrie Chow
 [color]
-    ui = true
+        ui = true
 [pull]
 	rebase = true
 [push]
@@ -38,8 +38,12 @@
 	stl = stash list
 	stp = stash pop
 [commit]
-    verbose = true
+        verbose = true
 [core]
 	excludesfile = ~/.gitignore.global
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+	diffFilter = diff-so-fancy --patch
