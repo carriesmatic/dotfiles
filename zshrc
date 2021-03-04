@@ -16,6 +16,7 @@ zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1  }
 # Aliases
 alias dl='cd ~/Downloads'
 alias dot='cd ~/dotfiles'
+alias reload='source ~/.zshrc'
 alias g='git'
 
 # Disable oh-my-zsh auto update prompt.
